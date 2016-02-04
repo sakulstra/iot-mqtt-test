@@ -1,20 +1,25 @@
 <template name="eventList">
-    <ul class="collection with-header">
-        <li class="collection-header"><h4>Beaglebones</h4></li>
-        {{#each events}}
-            <li class="collection-item">
-                <div class="row">
-                    <div class="col l3">
-                        <a class="btn" href="#">{{topic}}</a>
+    <div class="card-content">
+        <div class="card-header">
+            <button id="reset" class="btn right">Reset</button>
+            <h4>Beaglebones</h4>
+        </div>
+        <ul class="collection">
+            {{#each events}}
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col l3">
+                            <a class="btn" href="#">{{topic}}</a>
+                        </div>
+                        <div class="col l7">
+                            {{message}}
+                        </div>
+                        <div class="col l2">
+                            {{modifiedAt}}
+                        </div>
                     </div>
-                    <div class="col l7">
-                        {{message}}
-                    </div>
-                    <div class="col l2">
-                        {{modifiedAt}}
-                    </div>
-                </div>
-            </li>
-        {{/each}}
-    </ul>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
 </template>

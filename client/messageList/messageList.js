@@ -6,3 +6,9 @@ Template.messagelist.helpers({
     return Messages.find().fetch();
   }
 });
+
+Template.messagelist.events({
+  'click #reset'(){
+    Meteor.call("messages.reset");
+  }
+});

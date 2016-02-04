@@ -6,3 +6,9 @@ Template.eventList.helpers({
     return Events.find().fetch();
   }
 });
+
+Template.eventList.events({
+  'click #reset'(){
+    Meteor.call("events.reset");
+  }
+});

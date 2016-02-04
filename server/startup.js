@@ -12,9 +12,6 @@ Events.mqttConnect('mqtt://localhost:1883', ["beaglebone/+"]);
 /**
  * Timestamp the data
  */
-Events.before.insert(function (userId, doc) {
-  doc.createdAt = Date.now();
-});
 Events.before.upsert(function (userId, selector, modifier, options) {
   modifier.$set = modifier.$set || {};
   modifier.$set.modifiedAt = Date.now();
