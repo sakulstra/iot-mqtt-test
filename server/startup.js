@@ -8,7 +8,8 @@
  * so the events database holds the current event status
  * ################################################################
  */
-Events.mqttConnect('mqtt://localhost:1883', ["beaglebone/+"]);
+let server = Meteor.settings.mqttHost;
+Events.mqttConnect(server, ["beaglebone/+"]);
 /**
  * Timestamp the data
  */
@@ -28,7 +29,7 @@ Meteor.publish('events', function(){
  * In this database we can hold all the info/warning/error messages
  * ################################################################
  */
-Messages.mqttConnect('mqtt://localhost:1883', ["info","warning","error"], {insert: true});
+Messages.mqttConnect(server, ["info","warning","error"], {insert: true});
 /**
  * Timestamp the data
  */

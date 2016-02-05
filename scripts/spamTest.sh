@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "this script will spam the local mqtt with beaglebone/id events at ~10hz"
-declare -a array=("none" "personEvent" "emergencyEvent")
+declare -a array=("none" "personevent" "emergencyevent")
 while true
 do
   sleep 0.1
