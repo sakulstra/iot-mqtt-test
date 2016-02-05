@@ -16,5 +16,6 @@ Simulating mqtt messages is as easy as calling sh ./spamTest.sh
 
 Problems so far
 ---------------
-The gui will probably lag because of a lot of updates in the database.
+[ x ] The gui will probably lag because of a lot of updates in the database.
 It would be okay if the view would only refresh every 2 seconds or sth.
+-> solved by replacing publish/subscribe with methods and timers
