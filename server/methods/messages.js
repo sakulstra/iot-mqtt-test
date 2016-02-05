@@ -4,5 +4,8 @@
 Meteor.methods({
   'messages.reset'(){
     Messages.remove({});
+  },
+  'messages.list'(){
+    Messages.find({}).fetch();
   }
 });

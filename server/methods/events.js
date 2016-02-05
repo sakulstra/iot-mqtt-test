@@ -4,5 +4,8 @@
 Meteor.methods({
   'events.reset'(){
     Events.remove({});
+  },
+  'events.list'(){
+    return Events.find({}).fetch();
   }
 });

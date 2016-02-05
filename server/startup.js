@@ -18,13 +18,6 @@ Events.before.upsert(function (userId, selector, modifier, options) {
   modifier.$set.modifiedAt = Date.now();
 });
 /**
- * Publish everything
- */
-Meteor.publish('events', function(){
-  return Events.find();
-});
-
-/**
  * ################################################################
  * In this database we can hold all the info/warning/error messages
  * ################################################################
@@ -36,10 +29,3 @@ Messages.mqttConnect(server, ["info","warning","error"], {insert: true});
 Messages.before.insert(function (userId, doc) {
   doc.createdAt = Date.now();
 });
-/**
- * Publish everything
- */
-Meteor.publish('messages', function(){
-  return Messages.find();
-});
-

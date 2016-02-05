@@ -8,3 +8,16 @@ The beaglebones now only have to publish on this specified channels.
 #How this actually works
 I don't really want to change a lot on the beaglebone side, so the simplest approach is replacing the remote call with an mqtt publish.
 As a result we get data at a 10Hz rate on the mqtt subscribe in meteor.
+
+#Event message
+```json
+{
+  "topic":"bb/[macaddress]",
+  "message":{
+    "events":{
+      {"id":"0","type":"personEvent",...arguments}
+      {"id":"1","type":"emergencyEvent",...arguments}
+    }
+  }
+}
+```
